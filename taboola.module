@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Taboola module code.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function taboola_theme($existing, $type, $theme, $path) {
+  return [
+    'taboola' => [
+      'template' => 'taboola',
+      'variables' => [
+        'container_id' => NULL
+      ],
+    ],
+  ];
+}

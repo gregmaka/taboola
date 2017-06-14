@@ -1,0 +1,9 @@
+taboola:
+  version: VERSION
+  js:
+    js/taboola-head.js: { scope: header }
+    js/taboola-body.js: { scope: footer }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
