@@ -15,6 +15,8 @@
       document.getElementsByTagName('script')[0],
       drupalSettings.taboola.service_url,
       'tb_loader_script');
+      if(window.performance && typeof window.performance.mark == 'function')
+        {window.performance.mark('tbl_ic');}
     }
   };
 })(jQuery, Drupal, drupalSettings);
