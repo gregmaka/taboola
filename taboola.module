@@ -18,3 +18,18 @@ function taboola_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function taboola_page_attachments_alter(&$build) {
+  // Only adds taboola settings to pages with a taboola block.
+  $regions = \Drupal::service('block.repository')->getVisibleBlocksPerRegion();
+  foreach ($regions as $blocks) {
+    foreach ($blocks as $block) {
+      if ($block->get('plugin') == 'taboola_block') {
+        $build['#attached']['drupalSettings']['taboola'][] = $block->get('settings');
+      }
+    }
+  }
+}
