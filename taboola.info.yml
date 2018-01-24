@@ -1,5 +1,4 @@
 name: 'Taboola'
-project: taboola
 description: 'Blocks for Taboola ads'
 core: 8.x
 package: 'Advertising'

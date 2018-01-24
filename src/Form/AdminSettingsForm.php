@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\taboola\Form\AdminSettingsForm.
- */
-
 namespace Drupal\taboola\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
@@ -22,7 +17,7 @@ class AdminSettingsForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      'taboola.settings'
+      'taboola.settings',
     ];
   }
 

@@ -13,7 +13,7 @@ function taboola_theme($existing, $type, $theme, $path) {
     'taboola' => [
       'template' => 'taboola',
       'variables' => [
-        'container_id' => NULL
+        'container_id' => NULL,
       ],
     ],
   ];
