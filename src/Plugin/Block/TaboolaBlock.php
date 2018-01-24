@@ -34,7 +34,7 @@ class TaboolaBlock extends BlockBase implements ContainerFactoryPluginInterface 
    *   The plugin_id for the plugin instance.
    * @param string $plugin_definition
    *   The plugin implementation definition.
-   * @param ConfigFactory $config_factory
+   * @param \Drupal\Core\Config\ConfigFactory $config_factory
    *   The config factory.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactory $config_factory) {
