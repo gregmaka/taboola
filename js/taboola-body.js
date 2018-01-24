@@ -3,13 +3,16 @@
   Drupal.behaviors.taboola_body = {
     attach: function () {
       window._taboola = window._taboola || [];
-      _taboola.push({
-        mode: drupalSettings.taboola.mode,
-        container: drupalSettings.taboola.container,
-        placement: drupalSettings.taboola.placement,
-        target_type: drupalSettings.taboola.target_type
+      $.each( drupalSettings.taboola, function( key, setting ) {
+        if ($.isNumeric(key)) {
+          _taboola.push({
+            mode: drupalSettings.taboola[key].mode,
+            container: drupalSettings.taboola[key].container,
+            placement: drupalSettings.taboola[key].placement,
+            target_type: drupalSettings.taboola[key].target_type
+          });
+        }
       });
-
       _taboola.push({flush: true});
     }
   };
