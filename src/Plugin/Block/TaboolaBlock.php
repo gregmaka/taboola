@@ -1,16 +1,12 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\taboola\Plugin\Block\TaboolaBlock.
- */
-
 namespace Drupal\taboola\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Config\ConfigFactory;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Provides a Taboola block.
@@ -62,7 +58,7 @@ class TaboolaBlock extends BlockBase implements ContainerFactoryPluginInterface 
   /**
    * {@inheritdoc}
    */
-  public function blockForm($form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  public function blockForm($form, FormStateInterface $form_state) {
     $form = parent::blockForm($form, $form_state);
     $configuration = $this->getConfiguration();
 
@@ -100,7 +96,7 @@ class TaboolaBlock extends BlockBase implements ContainerFactoryPluginInterface 
   /**
    * {@inheritdoc}
    */
-  public function blockSubmit($form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  public function blockSubmit($form, FormStateInterface $form_state) {
     $this->setConfigurationValue('mode', $form_state->getValue('mode'));
     $this->setConfigurationValue('placement', $form_state->getValue('placement'));
     $this->setConfigurationValue('target_type', $form_state->getValue('target_type'));
@@ -125,9 +121,10 @@ class TaboolaBlock extends BlockBase implements ContainerFactoryPluginInterface 
         'drupalSettings' => [
           'taboola' => [
             'service_url' => $service_url,
-          ]
-        ]
+          ],
+        ],
       ],
     ];
   }
+
 }
