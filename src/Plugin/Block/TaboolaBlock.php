@@ -66,33 +66,33 @@ class TaboolaBlock extends BlockBase implements ContainerFactoryPluginInterface 
     $form = parent::blockForm($form, $form_state);
     $configuration = $this->getConfiguration();
 
-    $form['mode'] = array(
+    $form['mode'] = [
       '#type' => 'textfield',
       '#title' => t('Mode'),
       '#required' => TRUE,
       '#default_value' => !empty($configuration['mode']) ? $configuration['mode'] : '',
-    );
+    ];
 
-    $form['placement'] = array(
+    $form['placement'] = [
       '#type' => 'textfield',
       '#title' => t('Placement'),
       '#required' => TRUE,
       '#default_value' => !empty($configuration['placement']) ? $configuration['placement'] : '',
-    );
+    ];
 
-    $form['target_type'] = array(
+    $form['target_type'] = [
       '#type' => 'textfield',
       '#title' => t('Target Type'),
       '#required' => TRUE,
       '#default_value' => !empty($configuration['target_type']) ? $configuration['target_type'] : '',
-    );
+    ];
 
-    $form['container'] = array(
+    $form['container'] = [
       '#type' => 'textfield',
       '#title' => t('Container'),
       '#required' => TRUE,
       '#default_value' => !empty($configuration['container']) ? $configuration['container'] : '',
-    );
+    ];
 
     return $form;
   }

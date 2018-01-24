@@ -34,19 +34,19 @@ class AdminSettingsForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('taboola.settings');
 
-    $form['global'] = array(
+    $form['global'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Global settings'),
       '#collapsible' => FALSE,
       '#collapsed' => FALSE,
-    );
-    $form['global']['service_url'] = array(
+    ];
+    $form['global']['service_url'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Service URL'),
       '#description' => $this->t('Taboola service URL'),
       '#required' => TRUE,
       '#default_value' => $config->get('service_url'),
-    );
+    ];
 
     return parent::buildForm($form, $form_state);
   }
