@@ -115,6 +115,7 @@ class TaboolaBlock extends BlockBase implements ContainerFactoryPluginInterface 
     if (empty($service_url)) {
       return NULL;
     }
+
     $block_configuration = $this->getConfiguration();
     return [
       '#theme' => 'taboola',
@@ -124,14 +125,9 @@ class TaboolaBlock extends BlockBase implements ContainerFactoryPluginInterface 
         'drupalSettings' => [
           'taboola' => [
             'service_url' => $service_url,
-            'mode' => $block_configuration['mode'],
-            'placement' => $block_configuration['placement'],
-            'target_type' => $block_configuration['target_type'],
-            'container' => $block_configuration['container'],
           ]
         ]
       ],
     ];
   }
-
 }
