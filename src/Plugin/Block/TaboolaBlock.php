@@ -26,7 +26,7 @@ class TaboolaBlock extends BlockBase implements ContainerFactoryPluginInterface 
   protected $configFactory;
 
   /**
-   * Constructor for ContactBlock block class.
+   * Constructor for TaboolaBlock block class.
    *
    * @param array $configuration
    *   A configuration array containing information about the plugin instance.
