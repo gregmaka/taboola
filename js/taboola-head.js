@@ -1,4 +1,4 @@
-(function ($, Drupal, drupalSettings) {
+(function (Drupal, drupalSettings) {
   "use strict";
   Drupal.behaviors.taboola_head = {
     attach: function () {
@@ -15,8 +15,9 @@
       document.getElementsByTagName('script')[0],
       drupalSettings.taboola.service_url,
       'tb_loader_script');
-      if(window.performance && typeof window.performance.mark == 'function')
-        {window.performance.mark('tbl_ic');}
+      if (window.performance && typeof window.performance.mark == 'function') {
+        window.performance.mark('tbl_ic');
+      }
     }
   };
-})(jQuery, Drupal, drupalSettings);
+})(Drupal, drupalSettings);
