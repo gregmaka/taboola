@@ -47,6 +47,12 @@ class AdminSettingsForm extends ConfigFormBase {
       '#required' => TRUE,
       '#default_value' => $config->get('service_url'),
     ];
+    $form['global']['lazy_load'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Activate lazy loading'),
+      '#description' => $this->t('Taboola will be loaded when it is in view.'),
+      '#default_value' => $config->get('lazy_load'),
+    ];
 
     return parent::buildForm($form, $form_state);
   }
@@ -59,6 +65,7 @@ class AdminSettingsForm extends ConfigFormBase {
 
     $this->config('taboola.settings')
       ->set('service_url', $form_state->getValue('service_url'))
+      ->set('lazy_load', $form_state->getValue('lazy_load'))
       ->save();
   }
 

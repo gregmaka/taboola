@@ -108,6 +108,7 @@ class TaboolaBlock extends BlockBase implements ContainerFactoryPluginInterface 
    */
   public function build() {
     $service_url = $this->configFactory->get('taboola.settings')->get('service_url');
+    $lazy_load = $this->configFactory->get('taboola.settings')->get('lazy_load');
     if (empty($service_url)) {
       return NULL;
     }
@@ -121,6 +122,7 @@ class TaboolaBlock extends BlockBase implements ContainerFactoryPluginInterface 
         'drupalSettings' => [
           'taboola' => [
             'service_url' => $service_url,
+            'lazy_load' => $lazy_load,
           ],
         ],
       ],
